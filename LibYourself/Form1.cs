@@ -16,5 +16,21 @@ namespace LibYourself
         {
             InitializeComponent();
         }
+
+        private void addNewLibrary_Click(object sender, EventArgs e)
+        {
+            addLibrary add = new addLibrary();
+            add.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
