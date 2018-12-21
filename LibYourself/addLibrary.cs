@@ -61,7 +61,6 @@ namespace LibYourself
             {
                 MessageBox.Show("tablo yaratmak için lütfen en az 1 attr. girin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // create.CommandText = "Create Table " + libraryName.Text + "(" + listBox1.Items[0] + " TEXT)";
 
             listBox1.Items.RemoveAt(0);
 
@@ -83,6 +82,7 @@ namespace LibYourself
         {
 
         }
+
         Form1 obj = new Form1();
 
         private void addAttributeButton_Click_1(object sender, EventArgs e)

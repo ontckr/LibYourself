@@ -43,7 +43,7 @@
             this.groupBox.Controls.Add(this.attribute);
             this.groupBox.Location = new System.Drawing.Point(3, 3);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(614, 129);
+            this.groupBox.Size = new System.Drawing.Size(614, 130);
             this.groupBox.TabIndex = 5;
             this.groupBox.TabStop = false;
             // 
