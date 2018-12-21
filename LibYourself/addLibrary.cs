@@ -13,9 +13,11 @@ namespace LibYourself
 {
     public partial class addLibrary : Form
     {
-        public addLibrary()
+        private Form1 form1;
+        public addLibrary(Form1 f1)
         {
             InitializeComponent();
+            this.form1 = f1;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -32,13 +34,15 @@ namespace LibYourself
             }
         }
 
+        SQLiteConnection conn = new SQLiteConnection
+        {
+            ConnectionString = ("Data Source=DataTable.db;")
+        };
+
         private void createLibrary_Click(object sender, EventArgs e)
         {
 
-            SQLiteConnection conn = new SQLiteConnection
-            {
-                ConnectionString = ("Data Source=DataTable.db;")
-            };
+           
             conn.Open();
             SQLiteCommand create = new SQLiteCommand();
             SQLiteCommand att = new SQLiteCommand();
@@ -70,9 +74,9 @@ namespace LibYourself
                 att.ExecuteNonQuery();
 
             }
-
+            form1.getTables();
+            form1.getTableData(libraryName.Text);
             this.Close();
-
         }
 
         private void addLibrary_Load(object sender, EventArgs e)

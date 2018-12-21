@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.addFavorite = new System.Windows.Forms.Button();
             this.searchKey = new System.Windows.Forms.RichTextBox();
             this.showFavorite = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.editItem = new System.Windows.Forms.Button();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
-            this.addFavorite = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,14 +104,18 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 124);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(847, 645);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel4
             // 
@@ -129,6 +133,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(847, 124);
             this.panel4.TabIndex = 0;
+            // 
+            // addFavorite
+            // 
+            this.addFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.addFavorite.Location = new System.Drawing.Point(350, 61);
+            this.addFavorite.Name = "addFavorite";
+            this.addFavorite.Size = new System.Drawing.Size(144, 38);
+            this.addFavorite.TabIndex = 10;
+            this.addFavorite.Text = "Add Favorite";
+            this.addFavorite.UseVisualStyleBackColor = true;
+            this.addFavorite.Click += new System.EventHandler(this.addFavorite_Click);
             // 
             // searchKey
             // 
@@ -204,17 +219,6 @@
             this.addItem.UseVisualStyleBackColor = true;
             this.addItem.Click += new System.EventHandler(this.addItem_Click);
             // 
-            // addFavorite
-            // 
-            this.addFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.addFavorite.Location = new System.Drawing.Point(350, 61);
-            this.addFavorite.Name = "addFavorite";
-            this.addFavorite.Size = new System.Drawing.Size(144, 38);
-            this.addFavorite.TabIndex = 10;
-            this.addFavorite.Text = "Add Favorite";
-            this.addFavorite.UseVisualStyleBackColor = true;
-            this.addFavorite.Click += new System.EventHandler(this.addFavorite_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -241,7 +245,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button addNewLibrary;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button editItem;
         private System.Windows.Forms.Button deleteItem;
         private System.Windows.Forms.Button addItem;
@@ -250,6 +253,7 @@
         private System.Windows.Forms.RichTextBox searchKey;
         private System.Windows.Forms.Button showFavorite;
         private System.Windows.Forms.Button addFavorite;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

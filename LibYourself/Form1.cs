@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,7 +24,7 @@ namespace LibYourself
 
         private void addNewLibrary_Click(object sender, EventArgs e)
         {
-            addLibrary add = new addLibrary();
+            addLibrary add = new addLibrary(this);
             add.Show();
         }
 
@@ -57,19 +59,32 @@ namespace LibYourself
         {
             flowLayoutPanel1.Controls.Clear();
 
-            for(int i = 0; i<5; i++)
-            {
-                Button button = new Button();
-                button.Text = i.ToString();
-                button.Width = 150;
-                button.Height = 40;
 
-                // Get the table name from button and pass it to another function to get the data
-                button.Click += (s, e) => {
-                    //getTableName(tableName)
-                    selectedTable = "Books";
-                };
-                flowLayoutPanel1.Controls.Add(button);
+            using (SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;"))
+            {
+                connect.Open();
+                using (SQLiteCommand fmd = connect.CreateCommand())
+                {
+                    fmd.CommandText = @"SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name";
+                    fmd.CommandType = CommandType.Text;
+                    SQLiteDataReader r = fmd.ExecuteReader();
+                    while (r.Read())
+                    {
+                        Console.WriteLine(r["name"]);
+                        Button button = new Button();
+                        button.Text = r["name"].ToString();
+                        button.Width = 150;
+                        button.Height = 40;
+
+                        // Get the table name from button and pass it to another function to get the data
+                        button.Click += (s, e) => {
+                            //getTableName(tableName)
+                            selectedTable = button.Text;
+                            getTableData(button.Text);
+                        };
+                        flowLayoutPanel1.Controls.Add(button);
+                    }
+                }
             }
         }
 
@@ -77,7 +92,16 @@ namespace LibYourself
         public void getTableData(String tableName)
         {
             dataGridView1.Controls.Clear();
-            // For each record that is coming from the table, add to datagrid
+            
+            using (SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;"))
+            {
+                connect.Open();
+                DataSet dataSet = new DataSet();
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("Select * From " + tableName, connect);
+                dataAdapter.Fill(dataSet);
+
+                dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+            }
         }
 
         private void addItem_Click(object sender, EventArgs e)
@@ -90,5 +114,11 @@ namespace LibYourself
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
