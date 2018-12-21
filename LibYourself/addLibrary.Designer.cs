@@ -40,19 +40,17 @@
             // 
             // libraryName
             // 
-            this.libraryName.Location = new System.Drawing.Point(105, 46);
-            this.libraryName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.libraryName.Location = new System.Drawing.Point(158, 71);
             this.libraryName.Name = "libraryName";
-            this.libraryName.Size = new System.Drawing.Size(185, 26);
+            this.libraryName.Size = new System.Drawing.Size(276, 38);
             this.libraryName.TabIndex = 0;
             this.libraryName.Text = "";
             // 
             // newAttribute
             // 
-            this.newAttribute.Location = new System.Drawing.Point(105, 90);
-            this.newAttribute.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.newAttribute.Location = new System.Drawing.Point(158, 138);
             this.newAttribute.Name = "newAttribute";
-            this.newAttribute.Size = new System.Drawing.Size(185, 25);
+            this.newAttribute.Size = new System.Drawing.Size(276, 36);
             this.newAttribute.TabIndex = 1;
             this.newAttribute.Text = "";
             // 
@@ -60,10 +58,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(33, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(50, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 20);
+            this.label1.Size = new System.Drawing.Size(103, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Name : ";
             // 
@@ -71,10 +68,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(14, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(21, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 20);
+            this.label2.Size = new System.Drawing.Size(131, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Attribute : ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -82,18 +78,17 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(105, 138);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(158, 212);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(185, 225);
+            this.listBox1.Size = new System.Drawing.Size(276, 344);
             this.listBox1.TabIndex = 4;
             // 
             // addAttributeButton
             // 
-            this.addAttributeButton.Location = new System.Drawing.Point(299, 90);
-            this.addAttributeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addAttributeButton.Location = new System.Drawing.Point(448, 138);
             this.addAttributeButton.Name = "addAttributeButton";
-            this.addAttributeButton.Size = new System.Drawing.Size(69, 24);
+            this.addAttributeButton.Size = new System.Drawing.Size(104, 37);
             this.addAttributeButton.TabIndex = 5;
             this.addAttributeButton.Text = "Add";
             this.addAttributeButton.UseVisualStyleBackColor = true;
@@ -101,20 +96,19 @@
             // 
             // deleteAttributeButton
             // 
-            this.deleteAttributeButton.Location = new System.Drawing.Point(299, 225);
-            this.deleteAttributeButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteAttributeButton.Location = new System.Drawing.Point(448, 346);
             this.deleteAttributeButton.Name = "deleteAttributeButton";
-            this.deleteAttributeButton.Size = new System.Drawing.Size(69, 27);
+            this.deleteAttributeButton.Size = new System.Drawing.Size(104, 42);
             this.deleteAttributeButton.TabIndex = 6;
             this.deleteAttributeButton.Text = "Delete";
             this.deleteAttributeButton.UseVisualStyleBackColor = true;
+            this.deleteAttributeButton.Click += new System.EventHandler(this.deleteAttributeButton_Click_1);
             // 
             // createLibrary
             // 
-            this.createLibrary.Location = new System.Drawing.Point(322, 359);
-            this.createLibrary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.createLibrary.Location = new System.Drawing.Point(483, 552);
             this.createLibrary.Name = "createLibrary";
-            this.createLibrary.Size = new System.Drawing.Size(76, 32);
+            this.createLibrary.Size = new System.Drawing.Size(114, 49);
             this.createLibrary.TabIndex = 7;
             this.createLibrary.Text = "Create";
             this.createLibrary.UseVisualStyleBackColor = true;
@@ -122,9 +116,9 @@
             // 
             // addLibrary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 399);
+            this.ClientSize = new System.Drawing.Size(622, 614);
             this.Controls.Add(this.createLibrary);
             this.Controls.Add(this.deleteAttributeButton);
             this.Controls.Add(this.addAttributeButton);
@@ -133,7 +127,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.newAttribute);
             this.Controls.Add(this.libraryName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "addLibrary";
             this.Text = "addLibrary";
             this.Load += new System.EventHandler(this.addLibrary_Load);

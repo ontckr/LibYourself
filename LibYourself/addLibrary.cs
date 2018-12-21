@@ -23,33 +23,55 @@ namespace LibYourself
 
         }
 
+        private void deleteAttributeButton_Click_1(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+
+            }
+        }
+
         private void createLibrary_Click(object sender, EventArgs e)
         {
 
             SQLiteConnection conn = new SQLiteConnection
             {
-                ConnectionString = ("Data Source=C:/Users/Cemal Çağatay Buvan/Desktop/LibYourself/LibYourself/database/DataTable.db")
+                ConnectionString = ("Data Source=DataTable.db;")
             };
             conn.Open();
             SQLiteCommand create = new SQLiteCommand();
             SQLiteCommand att = new SQLiteCommand();
             create.Connection = conn;
-            create.CommandText = "Create Table " + libraryName.Text + "(" + listBox1.Items[0] + " TEXT)";
-            create.ExecuteNonQuery();
+            if(libraryName.Text != "" || listBox1.Text !=""){
+                create.CommandText = "Create Table " + libraryName.Text + "(" + listBox1.Items[0] + " TEXT)";
+                create.ExecuteNonQuery();
+            }
+            else if (libraryName.Text == "")
+            {
+                MessageBox.Show("Please enter a library name to add", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.newAttribute.Focus();
+                return;
+            }
+            else if (listBox1.Text == "")
+            {
+                MessageBox.Show("tablo yaratmak için lütfen en az 1 attr. girin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            // create.CommandText = "Create Table " + libraryName.Text + "(" + listBox1.Items[0] + " TEXT)";
+
             listBox1.Items.RemoveAt(0);
+
             att.Connection = conn;
-
-
 
             foreach (string ColumnName in listBox1.Items)
             {
-
+                Console.WriteLine(ColumnName);
                 att.CommandText = "ALTER TABLE " + libraryName.Text + " ADD COLUMN " + ColumnName + " TEXT ";
                 att.ExecuteNonQuery();
 
             }
 
-
+            this.Close();
 
         }
 
@@ -57,7 +79,7 @@ namespace LibYourself
         {
 
         }
-
+        Form1 obj = new Form1();
 
         private void addAttributeButton_Click_1(object sender, EventArgs e)
         {
@@ -67,11 +89,13 @@ namespace LibYourself
                 this.newAttribute.Focus();
                 this.newAttribute.Clear();
             }
-            else
+           
+            else if (newAttribute.Text == "")
             {
-                MessageBox.Show("Please enter an attribute name to add", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.newAttribute.Focus();
+                MessageBox.Show("burayı boş bırakamazsınız", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            obj.getTables();
         }
 
         private void deleteAttributeButton_Click(object sender, EventArgs e)

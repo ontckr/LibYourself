@@ -35,13 +35,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.searchKey = new System.Windows.Forms.RichTextBox();
+            this.showFavorite = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.editItem = new System.Windows.Forms.Button();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.showFavorite = new System.Windows.Forms.Button();
-            this.searchKey = new System.Windows.Forms.RichTextBox();
+            this.addFavorite = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,6 +65,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 124);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(244, 645);
@@ -114,6 +116,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.Controls.Add(this.addFavorite);
             this.panel4.Controls.Add(this.searchKey);
             this.panel4.Controls.Add(this.showFavorite);
             this.panel4.Controls.Add(this.searchButton);
@@ -127,45 +130,26 @@
             this.panel4.Size = new System.Drawing.Size(847, 124);
             this.panel4.TabIndex = 0;
             // 
-            // comboBox1
+            // searchKey
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(494, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 28);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.searchKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.searchKey.Location = new System.Drawing.Point(516, 20);
+            this.searchKey.Name = "searchKey";
+            this.searchKey.Size = new System.Drawing.Size(291, 38);
+            this.searchKey.TabIndex = 9;
+            this.searchKey.Text = "";
+            this.searchKey.TextChanged += new System.EventHandler(this.searchKey_TextChanged);
             // 
-            // editItem
+            // showFavorite
             // 
-            this.editItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.editItem.Location = new System.Drawing.Point(164, 62);
-            this.editItem.Name = "editItem";
-            this.editItem.Size = new System.Drawing.Size(167, 35);
-            this.editItem.TabIndex = 2;
-            this.editItem.Text = "Edit";
-            this.editItem.UseVisualStyleBackColor = true;
-            // 
-            // deleteItem
-            // 
-            this.deleteItem.Cursor = System.Windows.Forms.Cursors.Default;
-            this.deleteItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteItem.Location = new System.Drawing.Point(164, 20);
-            this.deleteItem.Name = "deleteItem";
-            this.deleteItem.Size = new System.Drawing.Size(167, 38);
-            this.deleteItem.TabIndex = 1;
-            this.deleteItem.Text = "Delete";
-            this.deleteItem.UseVisualStyleBackColor = true;
-            // 
-            // addItem
-            // 
-            this.addItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.addItem.Location = new System.Drawing.Point(6, 20);
-            this.addItem.Name = "addItem";
-            this.addItem.Size = new System.Drawing.Size(137, 80);
-            this.addItem.TabIndex = 0;
-            this.addItem.Text = "Add Item";
-            this.addItem.UseVisualStyleBackColor = true;
+            this.showFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.showFavorite.Location = new System.Drawing.Point(350, 20);
+            this.showFavorite.Name = "showFavorite";
+            this.showFavorite.Size = new System.Drawing.Size(144, 38);
+            this.showFavorite.TabIndex = 8;
+            this.showFavorite.Text = "Favorites";
+            this.showFavorite.UseVisualStyleBackColor = true;
+            this.showFavorite.Click += new System.EventHandler(this.showFavorite_Click);
             // 
             // searchButton
             // 
@@ -177,24 +161,59 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // showFavorite
+            // comboBox1
             // 
-            this.showFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.showFavorite.Location = new System.Drawing.Point(350, 20);
-            this.showFavorite.Name = "showFavorite";
-            this.showFavorite.Size = new System.Drawing.Size(127, 77);
-            this.showFavorite.TabIndex = 8;
-            this.showFavorite.Text = "Favorites";
-            this.showFavorite.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(516, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(167, 28);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // searchKey
+            // editItem
             // 
-            this.searchKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.searchKey.Location = new System.Drawing.Point(494, 20);
-            this.searchKey.Name = "searchKey";
-            this.searchKey.Size = new System.Drawing.Size(313, 38);
-            this.searchKey.TabIndex = 9;
-            this.searchKey.Text = "";
+            this.editItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.editItem.Location = new System.Drawing.Point(164, 62);
+            this.editItem.Name = "editItem";
+            this.editItem.Size = new System.Drawing.Size(167, 38);
+            this.editItem.TabIndex = 2;
+            this.editItem.Text = "Edit";
+            this.editItem.UseVisualStyleBackColor = true;
+            this.editItem.Click += new System.EventHandler(this.editItem_Click);
+            // 
+            // deleteItem
+            // 
+            this.deleteItem.Cursor = System.Windows.Forms.Cursors.Default;
+            this.deleteItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.deleteItem.Location = new System.Drawing.Point(164, 20);
+            this.deleteItem.Name = "deleteItem";
+            this.deleteItem.Size = new System.Drawing.Size(167, 38);
+            this.deleteItem.TabIndex = 1;
+            this.deleteItem.Text = "Delete";
+            this.deleteItem.UseVisualStyleBackColor = true;
+            this.deleteItem.Click += new System.EventHandler(this.deleteItem_Click);
+            // 
+            // addItem
+            // 
+            this.addItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.addItem.Location = new System.Drawing.Point(6, 20);
+            this.addItem.Name = "addItem";
+            this.addItem.Size = new System.Drawing.Size(137, 80);
+            this.addItem.TabIndex = 0;
+            this.addItem.Text = "Add Item";
+            this.addItem.UseVisualStyleBackColor = true;
+            this.addItem.Click += new System.EventHandler(this.addItem_Click);
+            // 
+            // addFavorite
+            // 
+            this.addFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.addFavorite.Location = new System.Drawing.Point(350, 61);
+            this.addFavorite.Name = "addFavorite";
+            this.addFavorite.Size = new System.Drawing.Size(144, 38);
+            this.addFavorite.TabIndex = 10;
+            this.addFavorite.Text = "Add Favorite";
+            this.addFavorite.UseVisualStyleBackColor = true;
+            this.addFavorite.Click += new System.EventHandler(this.addFavorite_Click);
             // 
             // Form1
             // 
@@ -230,6 +249,7 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.RichTextBox searchKey;
         private System.Windows.Forms.Button showFavorite;
+        private System.Windows.Forms.Button addFavorite;
     }
 }
 
