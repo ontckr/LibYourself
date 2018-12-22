@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace LibYourself
 {
@@ -19,8 +20,18 @@ namespace LibYourself
             InitializeComponent();
             this.tableName = tableName;
         }
+        
+        private void groupBox_Enter(object sender, EventArgs e)
+        {
 
-        public void getAttributes()
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void attribute_Click(object sender, EventArgs e)
         {
 
         }

@@ -86,9 +86,9 @@
             // 
             // addAttributeButton
             // 
-            this.addAttributeButton.Location = new System.Drawing.Point(448, 138);
+            this.addAttributeButton.Location = new System.Drawing.Point(458, 130);
             this.addAttributeButton.Name = "addAttributeButton";
-            this.addAttributeButton.Size = new System.Drawing.Size(104, 37);
+            this.addAttributeButton.Size = new System.Drawing.Size(128, 50);
             this.addAttributeButton.TabIndex = 5;
             this.addAttributeButton.Text = "Add";
             this.addAttributeButton.UseVisualStyleBackColor = true;
@@ -96,9 +96,9 @@
             // 
             // deleteAttributeButton
             // 
-            this.deleteAttributeButton.Location = new System.Drawing.Point(448, 346);
+            this.deleteAttributeButton.Location = new System.Drawing.Point(458, 346);
             this.deleteAttributeButton.Name = "deleteAttributeButton";
-            this.deleteAttributeButton.Size = new System.Drawing.Size(104, 42);
+            this.deleteAttributeButton.Size = new System.Drawing.Size(128, 50);
             this.deleteAttributeButton.TabIndex = 6;
             this.deleteAttributeButton.Text = "Delete";
             this.deleteAttributeButton.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@
             // 
             // createLibrary
             // 
-            this.createLibrary.Location = new System.Drawing.Point(483, 552);
+            this.createLibrary.Location = new System.Drawing.Point(458, 552);
             this.createLibrary.Name = "createLibrary";
-            this.createLibrary.Size = new System.Drawing.Size(114, 49);
+            this.createLibrary.Size = new System.Drawing.Size(128, 50);
             this.createLibrary.TabIndex = 7;
             this.createLibrary.Text = "Create";
             this.createLibrary.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 614);
+            this.ClientSize = new System.Drawing.Size(614, 626);
             this.Controls.Add(this.createLibrary);
             this.Controls.Add(this.deleteAttributeButton);
             this.Controls.Add(this.addAttributeButton);
@@ -128,7 +128,7 @@
             this.Controls.Add(this.newAttribute);
             this.Controls.Add(this.libraryName);
             this.Name = "addLibrary";
-            this.Text = "addLibrary";
+            this.Text = "New Library";
             this.Load += new System.EventHandler(this.addLibrary_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

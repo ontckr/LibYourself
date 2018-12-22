@@ -120,5 +120,10 @@ namespace LibYourself
 
         }
 
+        private void editLibrary_Click(object sender, EventArgs e)
+        {
+            editLibrary form = new editLibrary();
+            form.Show();
+        }
     }
 }

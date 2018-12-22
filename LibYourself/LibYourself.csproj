@@ -77,6 +77,12 @@
     <Compile Include="addLibrary.Designer.cs">
       <DependentUpon>addLibrary.cs</DependentUpon>
     </Compile>
+    <Compile Include="editLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editLibrary.Designer.cs">
+      <DependentUpon>editLibrary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addLibrary.resx">
       <DependentUpon>addLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editLibrary.resx">
+      <DependentUpon>editLibrary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

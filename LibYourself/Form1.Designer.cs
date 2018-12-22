@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.editLibrary = new System.Windows.Forms.Button();
             this.addFavorite = new System.Windows.Forms.Button();
             this.searchKey = new System.Windows.Forms.RichTextBox();
             this.showFavorite = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.editItem = new System.Windows.Forms.Button();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
-            this.editLibrary = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -137,6 +137,18 @@
             this.panel4.Size = new System.Drawing.Size(1211, 124);
             this.panel4.TabIndex = 0;
             // 
+            // editLibrary
+            // 
+            this.editLibrary.BackColor = System.Drawing.SystemColors.Info;
+            this.editLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.editLibrary.Location = new System.Drawing.Point(28, 23);
+            this.editLibrary.Name = "editLibrary";
+            this.editLibrary.Size = new System.Drawing.Size(190, 80);
+            this.editLibrary.TabIndex = 1;
+            this.editLibrary.Text = "Edit Library";
+            this.editLibrary.UseVisualStyleBackColor = false;
+            this.editLibrary.Click += new System.EventHandler(this.editLibrary_Click);
+            // 
             // addFavorite
             // 
             this.addFavorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -222,17 +234,6 @@
             this.addItem.Text = "Add Item";
             this.addItem.UseVisualStyleBackColor = false;
             this.addItem.Click += new System.EventHandler(this.addItem_Click);
-            // 
-            // editLibrary
-            // 
-            this.editLibrary.BackColor = System.Drawing.SystemColors.Info;
-            this.editLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.editLibrary.Location = new System.Drawing.Point(28, 23);
-            this.editLibrary.Name = "editLibrary";
-            this.editLibrary.Size = new System.Drawing.Size(190, 80);
-            this.editLibrary.TabIndex = 1;
-            this.editLibrary.Text = "Edit Library";
-            this.editLibrary.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
