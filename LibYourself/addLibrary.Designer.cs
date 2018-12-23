@@ -40,6 +40,7 @@
             // 
             // libraryName
             // 
+            this.libraryName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.libraryName.Location = new System.Drawing.Point(158, 71);
             this.libraryName.Name = "libraryName";
             this.libraryName.Size = new System.Drawing.Size(276, 38);
@@ -48,6 +49,7 @@
             // 
             // newAttribute
             // 
+            this.newAttribute.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.newAttribute.Location = new System.Drawing.Point(158, 138);
             this.newAttribute.Name = "newAttribute";
             this.newAttribute.Size = new System.Drawing.Size(276, 36);
@@ -57,35 +59,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(50, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 29);
+            this.label1.Size = new System.Drawing.Size(98, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Name : ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(21, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 29);
+            this.label2.Size = new System.Drawing.Size(134, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Attribute : ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
+            this.listBox1.ItemHeight = 27;
             this.listBox1.Location = new System.Drawing.Point(158, 212);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(276, 344);
+            this.listBox1.Size = new System.Drawing.Size(276, 301);
             this.listBox1.TabIndex = 4;
             // 
             // addAttributeButton
             // 
+            this.addAttributeButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addAttributeButton.Location = new System.Drawing.Point(458, 130);
             this.addAttributeButton.Name = "addAttributeButton";
             this.addAttributeButton.Size = new System.Drawing.Size(128, 50);
@@ -96,6 +100,7 @@
             // 
             // deleteAttributeButton
             // 
+            this.deleteAttributeButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.deleteAttributeButton.Location = new System.Drawing.Point(458, 346);
             this.deleteAttributeButton.Name = "deleteAttributeButton";
             this.deleteAttributeButton.Size = new System.Drawing.Size(128, 50);
@@ -106,6 +111,7 @@
             // 
             // createLibrary
             // 
+            this.createLibrary.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.createLibrary.Location = new System.Drawing.Point(458, 552);
             this.createLibrary.Name = "createLibrary";
             this.createLibrary.Size = new System.Drawing.Size(128, 50);

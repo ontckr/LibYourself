@@ -20,6 +20,14 @@ namespace LibYourself
         {
             InitializeComponent();
             getTables();
+
+            panel4.Hide();
+            panel5.Hide();
+
+            if (selectedTable == null)
+            {
+                panel5.Show();
+            }
         }
 
         private void addNewLibrary_Click(object sender, EventArgs e)
@@ -73,6 +81,8 @@ namespace LibYourself
                         Console.WriteLine(r["name"]);
                         Button button = new Button();
                         button.Text = r["name"].ToString();
+                        Font f = new Font("Arial", 10, FontStyle.Bold);
+                        button.Font = f;
                         button.Width = 150;
                         button.Height = 40;
 
@@ -91,8 +101,11 @@ namespace LibYourself
         //Get the data from the table and add it to dataGrid
         public void getTableData(String tableName)
         {
+            panel5.Hide();
+            panel4.Show();
+
             dataGridView1.Controls.Clear();
-            
+
             using (SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;"))
             {
                 connect.Open();
@@ -106,7 +119,8 @@ namespace LibYourself
 
         private void addItem_Click(object sender, EventArgs e)
         {
-            addItem addForm = new addItem(selectedTable);
+
+            addItem addForm = new addItem(selectedTable, getTableAttributes());
             addForm.Show();
         }
 
@@ -122,8 +136,30 @@ namespace LibYourself
 
         private void editLibrary_Click(object sender, EventArgs e)
         {
-            editLibrary form = new editLibrary();
+            editLibrary form = new editLibrary(selectedTable,getTableAttributes());
             form.Show();
+        }
+
+        // attribute list 
+        private List<String> getTableAttributes() 
+        {
+            List<String> attributes = new List<string>();
+
+            using (SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;"))
+            {
+                connect.Open();
+                using (SQLiteCommand fmd = connect.CreateCommand())
+                {
+                    fmd.CommandText = "PRAGMA table_info(" + selectedTable + ")";
+                    fmd.CommandType = CommandType.Text;
+                    SQLiteDataReader r = fmd.ExecuteReader();
+                    while (r.Read())
+                    {
+                        attributes.Add(r["name"].ToString());
+                    }
+                }
+            }
+            return attributes;
         }
     }
 }

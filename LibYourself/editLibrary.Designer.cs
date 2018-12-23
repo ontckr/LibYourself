@@ -42,6 +42,7 @@
             // deleteLibrary
             // 
             this.deleteLibrary.BackColor = System.Drawing.Color.LightCoral;
+            this.deleteLibrary.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.deleteLibrary.Location = new System.Drawing.Point(30, 530);
             this.deleteLibrary.Name = "deleteLibrary";
             this.deleteLibrary.Size = new System.Drawing.Size(180, 55);
@@ -52,6 +53,7 @@
             // 
             // saveLibrary
             // 
+            this.saveLibrary.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.saveLibrary.Location = new System.Drawing.Point(405, 530);
             this.saveLibrary.Name = "saveLibrary";
             this.saveLibrary.Size = new System.Drawing.Size(180, 55);
@@ -62,16 +64,18 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
+            this.listBox1.ItemHeight = 27;
             this.listBox1.Location = new System.Drawing.Point(145, 178);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(284, 304);
+            this.listBox1.Size = new System.Drawing.Size(284, 274);
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // editDeleteAttribute
             // 
+            this.editDeleteAttribute.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.editDeleteAttribute.Location = new System.Drawing.Point(457, 281);
             this.editDeleteAttribute.Name = "editDeleteAttribute";
             this.editDeleteAttribute.Size = new System.Drawing.Size(128, 50);
@@ -83,25 +87,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(36, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 29);
+            this.label1.Size = new System.Drawing.Size(98, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Name : ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(8, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 29);
+            this.label2.Size = new System.Drawing.Size(134, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Attribute : ";
             // 
             // editLibraryName
             // 
+            this.editLibraryName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.editLibraryName.Location = new System.Drawing.Point(145, 35);
             this.editLibraryName.Name = "editLibraryName";
             this.editLibraryName.Size = new System.Drawing.Size(276, 36);
@@ -111,6 +116,7 @@
             // 
             // editNewAttribute
             // 
+            this.editNewAttribute.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.editNewAttribute.Location = new System.Drawing.Point(145, 95);
             this.editNewAttribute.Name = "editNewAttribute";
             this.editNewAttribute.Size = new System.Drawing.Size(276, 36);
@@ -120,6 +126,7 @@
             // 
             // editAddButton
             // 
+            this.editAddButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.editAddButton.Location = new System.Drawing.Point(457, 83);
             this.editAddButton.Name = "editAddButton";
             this.editAddButton.Size = new System.Drawing.Size(128, 50);
