@@ -13,13 +13,22 @@ namespace LibYourself
 {
     public partial class addItem : Form
     {
+         
         public String tableName;
         private List<String> attributeList;
+       
+        SQLiteConnection conn = new SQLiteConnection
+        {
+            ConnectionString = ("Data Source=DataTable.db;")
+        };
+        SQLiteCommand item = new SQLiteCommand();
+        
 
         public addItem(String tableName, List<String> attributeList)
         {
             InitializeComponent();
             this.attributeList = attributeList;
+            conn.Open();
             fillTable();
         }
 
@@ -45,18 +54,30 @@ namespace LibYourself
                 attributeName.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
 
                 tableLayoutPanel1.Controls.Add(attributeName,0,i);
-
+                
                 TextBox textBox = new TextBox();
+                
+
                 textBox.Tag = attributeList[i];
+                
                 textBox.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
                 textBox.AutoSize = false;
                 textBox.Size = new System.Drawing.Size(228, 25);
                 textBox.Font = new Font("Arial", 12);
-
+                
 
 
                 tableLayoutPanel1.Controls.Add(textBox,1,i);
+
+                
+                
+                
             }
+
+            //item.Connection = conn;
+            //item.CommandText = "INSERT INTO (" + attributeList[i] + ") VALUES (" + textBox.Text[i] + ")";
+
+
 
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel1.Controls.Add(new Label(), 0, attributeList.Count);
@@ -71,6 +92,11 @@ namespace LibYourself
         private void attribute_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addItemButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -41,8 +41,6 @@ namespace LibYourself
 
         private void createLibrary_Click(object sender, EventArgs e)
         {
-
-           
             conn.Open();
             SQLiteCommand create = new SQLiteCommand();
             SQLiteCommand att = new SQLiteCommand();
@@ -62,13 +60,12 @@ namespace LibYourself
                 MessageBox.Show("tablo yaratmak için lütfen en az 1 attr. girin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            listBox1.Items.RemoveAt(0);
-
             att.Connection = conn;
-
+            
             foreach (string ColumnName in listBox1.Items)
             {
-                Console.WriteLine(ColumnName);
+                if (ColumnName == listBox1.Items[0])
+                    continue;
                 att.CommandText = "ALTER TABLE " + libraryName.Text + " ADD COLUMN " + ColumnName + " TEXT ";
                 att.ExecuteNonQuery();
 
