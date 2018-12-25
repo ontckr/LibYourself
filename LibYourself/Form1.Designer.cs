@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.addNewLibrary = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -88,7 +91,7 @@
             // addNewLibrary
             // 
             this.addNewLibrary.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.addNewLibrary.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.addNewLibrary.Font = new System.Drawing.Font("Arial", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addNewLibrary.Location = new System.Drawing.Point(23, 24);
             this.addNewLibrary.Name = "addNewLibrary";
             this.addNewLibrary.Size = new System.Drawing.Size(200, 83);
@@ -105,28 +108,53 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(244, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1211, 996);
+            this.panel2.Size = new System.Drawing.Size(1227, 996);
             this.panel2.TabIndex = 1;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Bisque;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 131);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1211, 1196);
+            this.panel5.Size = new System.Drawing.Size(1227, 1196);
             this.panel5.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(62, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1051, 31);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Bu bir kişisel kütühane uygulamasıdır......... /ekstra tanım/";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(6, 330);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1197, 300);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(391, 47);
+            this.label1.BackColor = System.Drawing.Color.Bisque;
+            this.label1.Font = new System.Drawing.Font("Courier New", 28F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(279, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(417, 138);
+            this.label1.Size = new System.Drawing.Size(674, 128);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome LibYourself\r\n\r\nNasıl Kullanılır Yazısı\r\n";
+            this.label1.Text = "Welcome LibYourself\r\n\r";
             // 
             // dataGridView1
             // 
@@ -139,7 +167,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1211, 865);
+            this.dataGridView1.Size = new System.Drawing.Size(1227, 865);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -158,7 +186,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1211, 131);
+            this.panel4.Size = new System.Drawing.Size(1227, 131);
             this.panel4.TabIndex = 0;
             // 
             // editLibrary
@@ -175,19 +203,20 @@
             // 
             // addFavorite
             // 
+            this.addFavorite.BackColor = System.Drawing.Color.MintCream;
             this.addFavorite.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addFavorite.Location = new System.Drawing.Point(653, 68);
             this.addFavorite.Name = "addFavorite";
-            this.addFavorite.Size = new System.Drawing.Size(193, 38);
+            this.addFavorite.Size = new System.Drawing.Size(193, 50);
             this.addFavorite.TabIndex = 10;
             this.addFavorite.Text = "Add Favorite";
-            this.addFavorite.UseVisualStyleBackColor = true;
+            this.addFavorite.UseVisualStyleBackColor = false;
             this.addFavorite.Click += new System.EventHandler(this.addFavorite_Click);
             // 
             // searchKey
             // 
             this.searchKey.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.searchKey.Location = new System.Drawing.Point(878, 30);
+            this.searchKey.Location = new System.Drawing.Point(878, 20);
             this.searchKey.Name = "searchKey";
             this.searchKey.Size = new System.Drawing.Size(320, 38);
             this.searchKey.TabIndex = 9;
@@ -196,21 +225,22 @@
             // 
             // showFavorite
             // 
+            this.showFavorite.BackColor = System.Drawing.Color.PaleTurquoise;
             this.showFavorite.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.showFavorite.Location = new System.Drawing.Point(653, 24);
+            this.showFavorite.Location = new System.Drawing.Point(653, 12);
             this.showFavorite.Name = "showFavorite";
-            this.showFavorite.Size = new System.Drawing.Size(193, 38);
+            this.showFavorite.Size = new System.Drawing.Size(193, 50);
             this.showFavorite.TabIndex = 8;
             this.showFavorite.Text = "Favorites";
-            this.showFavorite.UseVisualStyleBackColor = true;
+            this.showFavorite.UseVisualStyleBackColor = false;
             this.showFavorite.Click += new System.EventHandler(this.showFavorite_Click);
             // 
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.searchButton.Location = new System.Drawing.Point(1092, 74);
+            this.searchButton.Location = new System.Drawing.Point(1092, 71);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(107, 42);
+            this.searchButton.Size = new System.Drawing.Size(107, 44);
             this.searchButton.TabIndex = 6;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -218,35 +248,37 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(878, 76);
+            this.comboBox1.Location = new System.Drawing.Point(878, 74);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(208, 29);
+            this.comboBox1.Size = new System.Drawing.Size(208, 35);
             this.comboBox1.TabIndex = 5;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // editItem
             // 
+            this.editItem.BackColor = System.Drawing.SystemColors.Info;
             this.editItem.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.editItem.Location = new System.Drawing.Point(469, 68);
             this.editItem.Name = "editItem";
-            this.editItem.Size = new System.Drawing.Size(161, 38);
+            this.editItem.Size = new System.Drawing.Size(161, 50);
             this.editItem.TabIndex = 2;
             this.editItem.Text = "Edit Item";
-            this.editItem.UseVisualStyleBackColor = true;
+            this.editItem.UseVisualStyleBackColor = false;
             this.editItem.Click += new System.EventHandler(this.editItem_Click);
             // 
             // deleteItem
             // 
+            this.deleteItem.BackColor = System.Drawing.Color.LightCoral;
             this.deleteItem.Cursor = System.Windows.Forms.Cursors.Default;
             this.deleteItem.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteItem.Location = new System.Drawing.Point(469, 24);
+            this.deleteItem.Location = new System.Drawing.Point(469, 12);
             this.deleteItem.Name = "deleteItem";
-            this.deleteItem.Size = new System.Drawing.Size(161, 38);
+            this.deleteItem.Size = new System.Drawing.Size(161, 50);
             this.deleteItem.TabIndex = 1;
             this.deleteItem.Text = "Delete Item";
-            this.deleteItem.UseVisualStyleBackColor = true;
+            this.deleteItem.UseVisualStyleBackColor = false;
             this.deleteItem.Click += new System.EventHandler(this.deleteItem_Click);
             // 
             // addItem
@@ -265,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1455, 996);
+            this.ClientSize = new System.Drawing.Size(1471, 996);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -301,6 +333,8 @@
         private System.Windows.Forms.Button deleteItem;
         private System.Windows.Forms.Button addItem;
         private System.Windows.Forms.Button showFavorite;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

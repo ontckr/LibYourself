@@ -101,7 +101,7 @@
             // deleteAttributeButton
             // 
             this.deleteAttributeButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.deleteAttributeButton.Location = new System.Drawing.Point(458, 346);
+            this.deleteAttributeButton.Location = new System.Drawing.Point(458, 325);
             this.deleteAttributeButton.Name = "deleteAttributeButton";
             this.deleteAttributeButton.Size = new System.Drawing.Size(128, 50);
             this.deleteAttributeButton.TabIndex = 6;
@@ -124,6 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(614, 626);
             this.Controls.Add(this.createLibrary);
             this.Controls.Add(this.deleteAttributeButton);

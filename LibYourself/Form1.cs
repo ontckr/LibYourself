@@ -14,7 +14,7 @@ namespace LibYourself
 {
     public partial class Form1 : Form
     {
-        String selectedTable;
+       public String selectedTable;
 
         public Form1()
         {
@@ -29,6 +29,23 @@ namespace LibYourself
                 panel5.Show();
             }
         }
+        public void ShowPanel5()
+        {
+            panel4.Hide();
+            panel5.Show();
+        }
+        public void ShowPanel4()
+        {
+            panel5.Hide();
+            panel4.Show();
+        }
+        public void clearGrid()
+        {
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
+            dataGridView1.Update();
+            dataGridView1.Refresh();
+        }
 
         private void addNewLibrary_Click(object sender, EventArgs e)
         {
@@ -36,37 +53,10 @@ namespace LibYourself
             add.Show();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchKey_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void showFavorite_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void deleteItem_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void editItem_Click(object sender, EventArgs e)
-        {
-
-        }
         // Get Tables From Database and List them
         public void getTables()
         {
             flowLayoutPanel1.Controls.Clear();
-
 
             using (SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;"))
             {
@@ -97,7 +87,6 @@ namespace LibYourself
                 }
             }
         }
-
         //Get the data from the table and add it to dataGrid
         public void getTableData(String tableName)
         {
@@ -119,27 +108,15 @@ namespace LibYourself
 
         private void addItem_Click(object sender, EventArgs e)
         {
-
-            addItem addForm = new addItem(selectedTable, getTableAttributes());
+            addItem addForm = new addItem(selectedTable, getTableAttributes(), this);
             addForm.Show();
         }
-
-        private void addFavorite_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+   
         private void editLibrary_Click(object sender, EventArgs e)
         {
-            editLibrary form = new editLibrary(selectedTable,getTableAttributes());
+            editLibrary form = new editLibrary(selectedTable,getTableAttributes(),this);
             form.Show();
         }
-
         // attribute list 
         private List<String> getTableAttributes() 
         {
@@ -160,6 +137,44 @@ namespace LibYourself
                 }
             }
             return attributes;
+        }
+
+        private void addFavorite_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void searchKey_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void showFavorite_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void deleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void editItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

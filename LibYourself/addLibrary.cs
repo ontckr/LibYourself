@@ -20,11 +20,6 @@ namespace LibYourself
             this.form1 = f1;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deleteAttributeButton_Click_1(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem != null)
@@ -33,7 +28,6 @@ namespace LibYourself
 
             }
         }
-
         SQLiteConnection conn = new SQLiteConnection
         {
             ConnectionString = ("Data Source=DataTable.db;")
@@ -68,22 +62,16 @@ namespace LibYourself
                     continue;
                 att.CommandText = "ALTER TABLE " + libraryName.Text + " ADD COLUMN " + ColumnName + " TEXT ";
                 att.ExecuteNonQuery();
-
             }
             form1.getTables();
             form1.getTableData(libraryName.Text);
+            form1.selectedTable = libraryName.Text;
             this.Close();
         }
 
-        private void addLibrary_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        Form1 obj = new Form1();
-
         private void addAttributeButton_Click_1(object sender, EventArgs e)
         {
+            Form1 f1 = new Form1();
             if (this.newAttribute.Text != "")
             {
                 listBox1.Items.Add(this.newAttribute.Text);
@@ -96,7 +84,7 @@ namespace LibYourself
                 MessageBox.Show("burayı boş bırakamazsınız", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            obj.getTables();
+            f1.getTables();
         }
 
         private void deleteAttributeButton_Click(object sender, EventArgs e)
@@ -107,10 +95,7 @@ namespace LibYourself
             }
         }
 
-        private void libraryName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        private void label2_Click(object sender, EventArgs e) { }
+        private void addLibrary_Load(object sender, EventArgs e) { }
     }
 }

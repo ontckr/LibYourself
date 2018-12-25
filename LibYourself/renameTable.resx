@@ -117,16 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label2.Text" xml:space="preserve">
-    <value>1. Kütüphane olşturma : Kütüphane eklemek için sol üsttedki "New Library" 
-butonuna tıklayınız. attributeleri add e tıkayarak ekleyiniz.....
-
-2. Kütüphane düzenleme, silme : .......
-
-3. Kütüphaneye Item ekeleme ve ekleneleri düzenleme : ..........
-
-4. Favorilere ekleme ve görselleme : 
-
-5. Search yapma : </value>
-  </data>
 </root>
