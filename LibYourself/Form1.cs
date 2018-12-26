@@ -320,42 +320,34 @@ namespace LibYourself
             string search = searchKey.Text;
 
             DataSet dataSet = new DataSet();
-
-
-            if (searchKey.Text == "")
+            foreach (string sk in attributes)
             {
-                MessageBox.Show("Please enter something!");
-                panel4.Show();
+
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
+
+                dataAdapter.Fill(dataSet);
+
+
+
             }
-            
+            dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
 
-                foreach (string sk in attributes)
-                {
-
-                    SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
-
-                    dataAdapter.Fill(dataSet);
-
-                    dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
-                    if (searchKey.Text != "")
-                    {
-                        MessageBox.Show("Not Found! Make sure you wrote correctly.");
-                        panel4.Show();
-                    }
-                } 
-         
 
 
 
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
             conn.Open();

@@ -133,15 +133,22 @@
 </value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>1. Kütüphane olşturma : Kütüphane eklemek için sol üsttedki "New Library" 
-butonuna tıklayınız. attributeleri add e tıkayarak ekleyiniz.....
+    <value>USER GUIDE
 
-2. Kütüphane düzenleme, silme : .......
+1. New Library : This button for create a new library. You can add attributes
+as many as you want.
 
-3. Kütüphaneye Item ekeleme ve ekleneleri düzenleme : ..........
+2. Edit Library  :  You can change the name or you can remove an existing 
+libarary also you can remove or add attributes which belongs to the library.
 
-4. Favorilere ekleme ve görselleme : 
+3. Add Item : You can add data  in selected library attribute.
 
-5. Search yapma : </value>
+4. Delete Item : You can delete selected item.
+
+5. Favorites : This button shows your favorite items. You can add an item 
+via "Add Favorite" button and you can delete an item from favorite list with
+"Delete Favorite" button.
+
+6. Search : You can write the name of item which you want find.</value>
   </data>
 </root>

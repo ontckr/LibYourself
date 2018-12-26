@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.addFavorite = new System.Windows.Forms.Button();
             this.searchKey = new System.Windows.Forms.RichTextBox();
             this.showFavorite = new System.Windows.Forms.Button();
-            this.editItem = new System.Windows.Forms.Button();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -133,21 +133,22 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Courier New", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(41, 116);
+            this.label3.Location = new System.Drawing.Point(15, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(681, 22);
+            this.label3.Size = new System.Drawing.Size(791, 66);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Bu bir kişisel kütühane uygulamasıdır......... /ekstra tanım/";
+            this.label3.Text = "LibYourself is a personal library application for restore your data.\r\nYou can cre" +
+    "ate libraries and you can add  attributes in that libraries.\r\n\r\n";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Courier New", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(4, 214);
+            this.label2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(16, 208);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(824, 210);
+            this.label2.Size = new System.Drawing.Size(778, 306);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -169,11 +170,22 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkRed;
             this.dataGridView1.Location = new System.Drawing.Point(0, 85);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -190,7 +202,6 @@
             this.panel4.Controls.Add(this.addFavorite);
             this.panel4.Controls.Add(this.searchKey);
             this.panel4.Controls.Add(this.showFavorite);
-            this.panel4.Controls.Add(this.editItem);
             this.panel4.Controls.Add(this.deleteItem);
             this.panel4.Controls.Add(this.addItem);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -205,7 +216,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(768, 31);
+            this.button1.Location = new System.Drawing.Point(768, 29);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(39, 28);
             this.button1.TabIndex = 14;
@@ -229,10 +240,10 @@
             // 
             this.addFavorite.BackColor = System.Drawing.Color.MintCream;
             this.addFavorite.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.addFavorite.Location = new System.Drawing.Point(514, 17);
+            this.addFavorite.Location = new System.Drawing.Point(493, 17);
             this.addFavorite.Margin = new System.Windows.Forms.Padding(2);
             this.addFavorite.Name = "addFavorite";
-            this.addFavorite.Size = new System.Drawing.Size(109, 24);
+            this.addFavorite.Size = new System.Drawing.Size(130, 24);
             this.addFavorite.TabIndex = 10;
             this.addFavorite.Text = "Add Favorite";
             this.addFavorite.UseVisualStyleBackColor = false;
@@ -256,24 +267,11 @@
             this.showFavorite.Location = new System.Drawing.Point(405, 17);
             this.showFavorite.Margin = new System.Windows.Forms.Padding(2);
             this.showFavorite.Name = "showFavorite";
-            this.showFavorite.Size = new System.Drawing.Size(96, 51);
+            this.showFavorite.Size = new System.Drawing.Size(84, 51);
             this.showFavorite.TabIndex = 8;
             this.showFavorite.Text = "Favorites";
             this.showFavorite.UseVisualStyleBackColor = false;
             this.showFavorite.Click += new System.EventHandler(this.showFavorite_Click);
-            // 
-            // editItem
-            // 
-            this.editItem.BackColor = System.Drawing.SystemColors.Info;
-            this.editItem.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.editItem.Location = new System.Drawing.Point(284, 44);
-            this.editItem.Margin = new System.Windows.Forms.Padding(2);
-            this.editItem.Name = "editItem";
-            this.editItem.Size = new System.Drawing.Size(107, 23);
-            this.editItem.TabIndex = 2;
-            this.editItem.Text = "Edit Item";
-            this.editItem.UseVisualStyleBackColor = false;
-            this.editItem.Click += new System.EventHandler(this.editItem_Click);
             // 
             // deleteItem
             // 
@@ -283,7 +281,7 @@
             this.deleteItem.Location = new System.Drawing.Point(284, 16);
             this.deleteItem.Margin = new System.Windows.Forms.Padding(2);
             this.deleteItem.Name = "deleteItem";
-            this.deleteItem.Size = new System.Drawing.Size(107, 25);
+            this.deleteItem.Size = new System.Drawing.Size(107, 51);
             this.deleteItem.TabIndex = 1;
             this.deleteItem.Text = "Delete Item";
             this.deleteItem.UseVisualStyleBackColor = false;
@@ -304,13 +302,15 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(514, 43);
+            this.button2.BackColor = System.Drawing.Color.LightCoral;
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button2.Location = new System.Drawing.Point(493, 43);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.Size = new System.Drawing.Size(129, 27);
             this.button2.TabIndex = 15;
             this.button2.Text = "Delete Favorite";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -322,6 +322,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "LibYourself";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -347,7 +348,6 @@
         private System.Windows.Forms.Button editLibrary;
         private System.Windows.Forms.Button addFavorite;
         private System.Windows.Forms.RichTextBox searchKey;
-        private System.Windows.Forms.Button editItem;
         private System.Windows.Forms.Button deleteItem;
         private System.Windows.Forms.Button addItem;
         private System.Windows.Forms.Button showFavorite;
