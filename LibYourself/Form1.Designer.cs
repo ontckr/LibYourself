@@ -47,7 +47,7 @@
             this.editItem = new System.Windows.Forms.Button();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -183,7 +183,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.editLibrary);
             this.panel4.Controls.Add(this.addFavorite);
             this.panel4.Controls.Add(this.searchKey);
@@ -227,7 +227,7 @@
             // searchKey
             // 
             this.searchKey.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.searchKey.Location = new System.Drawing.Point(647, 41);
+            this.searchKey.Location = new System.Drawing.Point(643, 17);
             this.searchKey.Margin = new System.Windows.Forms.Padding(2);
             this.searchKey.Name = "searchKey";
             this.searchKey.Size = new System.Drawing.Size(149, 26);
@@ -288,16 +288,16 @@
             this.addItem.UseVisualStyleBackColor = false;
             this.addItem.Click += new System.EventHandler(this.addItem_Click);
             // 
-            // label4
+            // button1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(668, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 23);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Search Here!";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button1.Location = new System.Drawing.Point(680, 44);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 26);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Search!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -316,7 +316,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -341,7 +340,7 @@
         private System.Windows.Forms.Button showFavorite;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -157,7 +157,27 @@ namespace LibYourself
 
         private void addFavorite_Click(object sender, EventArgs e)
         {
-           
+            SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
+            conn.Open();
+
+            SQLiteCommand addFav = new SQLiteCommand();
+            addFav.Connection = conn;
+
+
+            foreach (DataGridViewCell row in dataGridView1.SelectedCells)
+            {
+
+
+                string row_1 = dataGridView1.CurrentCell.Value.ToString();
+                favList.Add(dataGridView1.CurrentCell.Value.ToString());
+                Console.WriteLine(favList[0]);
+                addFav.CommandText = "INSERT INTO favorites (favorite) VALUES ('" + row_1 + "')";
+                addFav.ExecuteNonQuery();
+                MessageBox.Show("Selected Item Added into Favorites !");
+
+
+
+            }
 
         }
 
@@ -169,43 +189,46 @@ namespace LibYourself
         }
         private void searchKey_TextChanged(object sender, EventArgs e)
         {
-            panel5.Hide();
-            panel4.Show();
-            dataGridView1.Controls.Clear();
-            SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;");
-            connect.Open();
-            List<String> attributes = new List<string>();
-            using (SQLiteCommand fmd = connect.CreateCommand())
-            {
-                fmd.CommandText = "PRAGMA table_info(" + selectedTable + ")";
-                fmd.CommandType = CommandType.Text;
-                SQLiteDataReader r = fmd.ExecuteReader();
-                while (r.Read())
-                {
-                    attributes.Add(r["name"].ToString());
-                }
-            }
-
-
-            string search = searchKey.Text;
-
-            DataSet dataSet = new DataSet();
-            foreach (string sk in attributes)
-            {
-
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
-
-                dataAdapter.Fill(dataSet);
-
-
-
-            }
-            dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+           
         }
 
         private void showFavorite_Click(object sender, EventArgs e)
         {
-            
+            panel5.Hide();
+            panel4.Show();
+
+            dataGridView1.Controls.Clear();
+
+            using (SQLiteConnection connect = new SQLiteConnection("Data Source=Favorites.db;"))
+            {
+                connect.Open();
+                DataSet dataSet = new DataSet();
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("Select * From favorites", connect);
+                dataAdapter.Fill(dataSet);
+
+                dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+            }
+            SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
+            conn.Open();
+
+            SQLiteCommand addFav = new SQLiteCommand();
+            addFav.Connection = conn;
+
+
+            foreach (DataGridViewCell row in dataGridView1.SelectedCells)
+            {
+
+
+                string row_1 = dataGridView1.CurrentCell.Value.ToString();
+                favList.Add(dataGridView1.CurrentCell.Value.ToString());
+                Console.WriteLine(favList[0]);
+                addFav.CommandText = "INSERT INTO favorites (favorite) VALUES ('" + row_1 + "')";
+                addFav.ExecuteNonQuery();
+               
+
+
+
+            }
         }
 
         private void deleteItem_Click(object sender, EventArgs e)
@@ -229,6 +252,53 @@ namespace LibYourself
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel5.Hide();
+            panel4.Show();
+            dataGridView1.Controls.Clear();
+            SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;");
+            connect.Open();
+            List<String> attributes = new List<string>();
+            using (SQLiteCommand fmd = connect.CreateCommand())
+            {
+                fmd.CommandText = "PRAGMA table_info(" + selectedTable + ")";
+                fmd.CommandType = CommandType.Text;
+                SQLiteDataReader r = fmd.ExecuteReader();
+                while (r.Read())
+                {
+                    attributes.Add(r["name"].ToString());
+                }
+            }
+
+
+            string search = searchKey.Text;
+
+            DataSet dataSet = new DataSet();
+
+
+            if (searchKey.Text == "")
+            {
+                MessageBox.Show("Please enter something!");
+                panel4.Show();
+            }
+            else
+            foreach (string sk in attributes)
+            {
+
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
+
+                dataAdapter.Fill(dataSet);
+
+                    dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+
+                }
+            
+            
+           
+           
         }
     }
 }
