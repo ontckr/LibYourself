@@ -284,21 +284,27 @@ namespace LibYourself
                 MessageBox.Show("Please enter something!");
                 panel4.Show();
             }
-            else
-            foreach (string sk in attributes)
-            {
+            
 
-                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
+                foreach (string sk in attributes)
+                {
 
-                dataAdapter.Fill(dataSet);
+                    SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
+
+                    dataAdapter.Fill(dataSet);
 
                     dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+                    if (searchKey.Text != "")
+                    {
+                        MessageBox.Show("Not Found! Make sure you wrote correctly.");
+                        panel4.Show();
+                    }
+                } 
+         
 
-                }
-            
-            
-           
-           
+
+
+
         }
     }
 }
