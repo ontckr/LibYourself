@@ -18,6 +18,7 @@ namespace LibYourself
         ArrayList list = new ArrayList();
         ArrayList favList = new ArrayList();
         public String selectedTable;
+        string tempName; 
 
         public Form1()
         {
@@ -233,7 +234,61 @@ namespace LibYourself
 
         private void deleteItem_Click(object sender, EventArgs e)
         {
+           SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
+            SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;");
+            connect.Open();
+            conn.Open();
+            SQLiteCommand del = new SQLiteCommand();
+            SQLiteCommand com = new SQLiteCommand();
 
+
+            List<String> attributes = new List<string>();
+            using (SQLiteCommand fmd = connect.CreateCommand())
+            {
+                fmd.CommandText = "PRAGMA table_info(" + selectedTable + ")";
+                fmd.CommandType = CommandType.Text;
+                SQLiteDataReader r = fmd.ExecuteReader();
+                while (r.Read())
+                {
+                    attributes.Add(r["name"].ToString());
+                }
+            }
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+                    list.Clear();
+                    for (int i = 0; i < dataGridView1.SelectedCells.Count; i++)
+                    { list.Add(dataGridView1.SelectedRows[0].Cells[i].Value.ToString()); }
+                    foreach (string a in list)
+                    {
+                        foreach (string b in favList)
+                        {
+                            if (a == b) { tempName = b; }
+                        }
+
+                    }
+
+                    string row_1 = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+                    del.CommandText = "DELETE FROM " + selectedTable + " WHERE " + attributes[0] + "= '" + row_1 + "'";
+
+                    com.CommandText = "DELETE FROM favorites WHERE favorite = '" + tempName + "'";
+                    del.Connection = connect;
+                    com.Connection = conn;
+                    del.ExecuteNonQuery();
+                    com.ExecuteNonQuery();
+
+                    dataGridView1.Rows.RemoveAt(row.Index);
+                    favList.Remove(tempName);
+                }
+                else
+                {
+                    MessageBox.Show("You Can Select Only One Row For Deleting !");
+                    break;
+                }
+
+            } 
         }
         private void editItem_Click(object sender, EventArgs e)
         {
@@ -305,6 +360,41 @@ namespace LibYourself
 
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
+            conn.Open();
+            SQLiteCommand delFav = new SQLiteCommand();
+
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                if (dataGridView1.SelectedRows.Count == 1)
+                {
+
+                    string row_1 = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+
+                    delFav.CommandText = "DELETE FROM favorites WHERE favorite = '" + row_1 + "'";
+                    delFav.Connection = conn;
+
+                    delFav.ExecuteNonQuery();
+                    dataGridView1.Rows.RemoveAt(row.Index);
+                    favList.Remove(tempName);
+                }
+                else
+                {
+                    MessageBox.Show("You Can Select Only One Row For Deleting !");
+                    break;
+                }
+
+            }
         }
     }
 }

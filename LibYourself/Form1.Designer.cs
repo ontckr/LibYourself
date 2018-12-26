@@ -48,6 +48,7 @@
             this.editItem = new System.Windows.Forms.Button();
             this.deleteItem = new System.Windows.Forms.Button();
             this.addItem = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -183,6 +184,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.editLibrary);
             this.panel4.Controls.Add(this.addFavorite);
@@ -230,7 +232,7 @@
             this.addFavorite.Location = new System.Drawing.Point(514, 17);
             this.addFavorite.Margin = new System.Windows.Forms.Padding(2);
             this.addFavorite.Name = "addFavorite";
-            this.addFavorite.Size = new System.Drawing.Size(109, 50);
+            this.addFavorite.Size = new System.Drawing.Size(109, 24);
             this.addFavorite.TabIndex = 10;
             this.addFavorite.Text = "Add Favorite";
             this.addFavorite.UseVisualStyleBackColor = false;
@@ -300,6 +302,16 @@
             this.addItem.UseVisualStyleBackColor = false;
             this.addItem.Click += new System.EventHandler(this.addItem_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(514, 43);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Delete Favorite";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +354,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
