@@ -195,6 +195,7 @@ namespace LibYourself
 
         private void showFavorite_Click(object sender, EventArgs e)
         {
+
             panel5.Hide();
             panel4.Show();
 
@@ -209,32 +210,12 @@ namespace LibYourself
 
                 dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
             }
-            SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
-            conn.Open();
 
-            SQLiteCommand addFav = new SQLiteCommand();
-            addFav.Connection = conn;
-
-
-            foreach (DataGridViewCell row in dataGridView1.SelectedCells)
-            {
-
-
-                string row_1 = dataGridView1.CurrentCell.Value.ToString();
-                favList.Add(dataGridView1.CurrentCell.Value.ToString());
-                Console.WriteLine(favList[0]);
-                addFav.CommandText = "INSERT INTO favorites (favorite) VALUES ('" + row_1 + "')";
-                addFav.ExecuteNonQuery();
-               
-
-
-
-            }
         }
 
-        private void deleteItem_Click(object sender, EventArgs e)
+         private void deleteItem_Click(object sender, EventArgs e)
         {
-           SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
+            SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
             SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;");
             connect.Open();
             conn.Open();
@@ -288,7 +269,14 @@ namespace LibYourself
                     break;
                 }
 
-            } 
+            }
+
+
+
+
+
+
+
         }
         private void editItem_Click(object sender, EventArgs e)
         {
