@@ -117,21 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH4gwaES4VFjJuUwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFgSURBVDhP
-        lZPJSsRAEIYL9OBJL94EfQEF8apv4NmbuOIIprszg4joQRwdXBB38eILiL6apjvzAvGvSs1CYgjzQdNJ
-        deWvrUN9zrNxMn6bXLgmEzpkww32K+xHZH8n1auCw+40HN8pTtbJpvcQuRUBlz5ApAHhF2r6RfUuwJH5
-        Y5Me4GNDa9mYnuTYdFUEWaz1M6PWIUzY1chGLWXiZIWsb0p5JThVTrsYuYj1z+T8BW1lE2pRrL+UFOtw
-        qcWKyCQLalF6Ha/DoZkuiSgKS2pR8hIe9a0aE+7gd1YeqQ3HWHvS7SoiP4fztoyzRCOZQh9eJRPTXVbr
-        gDiZxdkH1inWJ8qY15MhuC6ehIwqfcKzg/O+pB37Nuo/QfQYtm/x+Re+JFInjwsdl4hcs2SHyOFLbqzz
-        m3LlK+E586g4Ky6P4bSNb0FsI3+vE6nC+p2+CO+955HgyAORN9lHRqLzDxg6f72CxSei4TBvAAAAAElF
-        TkSuQmCC
-</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>USER GUIDE
 
@@ -150,5 +135,20 @@ via "Add Favorite" button and you can delete an item from favorite list with
 "Delete Favorite" button.
 
 6. Search : You can write the name of item which you want find.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH4gwaES4VFjJuUwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFgSURBVDhP
+        lZPJSsRAEIYL9OBJL94EfQEF8apv4NmbuOIIprszg4joQRwdXBB38eILiL6apjvzAvGvSs1CYgjzQdNJ
+        deWvrUN9zrNxMn6bXLgmEzpkww32K+xHZH8n1auCw+40HN8pTtbJpvcQuRUBlz5ApAHhF2r6RfUuwJH5
+        Y5Me4GNDa9mYnuTYdFUEWaz1M6PWIUzY1chGLWXiZIWsb0p5JThVTrsYuYj1z+T8BW1lE2pRrL+UFOtw
+        qcWKyCQLalF6Ha/DoZkuiSgKS2pR8hIe9a0aE+7gd1YeqQ3HWHvS7SoiP4fztoyzRCOZQh9eJRPTXVbr
+        gDiZxdkH1inWJ8qY15MhuC6ehIwqfcKzg/O+pB37Nuo/QfQYtm/x+Re+JFInjwsdl4hcs2SHyOFLbqzz
+        m3LlK+E586g4Ky6P4bSNb0FsI3+vE6nC+p2+CO+955HgyAORN9lHRqLzDxg6f72CxSei4TBvAAAAAElF
+        TkSuQmCC
+</value>
   </data>
 </root>

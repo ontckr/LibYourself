@@ -156,7 +156,7 @@ namespace LibYourself
             return attributes;
         }
 
-        private void addFavorite_Click(object sender, EventArgs e)
+        /*private void addFavorite_Click(object sender, EventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
             conn.Open();
@@ -180,7 +180,7 @@ namespace LibYourself
 
             }
 
-        }
+        }*/
 
         
         
@@ -193,7 +193,7 @@ namespace LibYourself
            
         }
 
-        private void showFavorite_Click(object sender, EventArgs e)
+       /* private void showFavorite_Click(object sender, EventArgs e)
         {
 
             panel5.Hide();
@@ -211,14 +211,14 @@ namespace LibYourself
                 dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
             }
 
-        }
+        }*/
 
          private void deleteItem_Click(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
+            //SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
             SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;");
             connect.Open();
-            conn.Open();
+            //conn.Open();
             SQLiteCommand del = new SQLiteCommand();
             SQLiteCommand com = new SQLiteCommand();
 
@@ -238,30 +238,30 @@ namespace LibYourself
             {
                 if (dataGridView1.SelectedRows.Count == 1)
                 {
-                    list.Clear();
-                    for (int i = 0; i < dataGridView1.SelectedCells.Count; i++)
-                    { list.Add(dataGridView1.SelectedRows[0].Cells[i].Value.ToString()); }
-                    foreach (string a in list)
-                    {
-                        foreach (string b in favList)
-                        {
-                            if (a == b) { tempName = b; }
-                        }
+                   // list.Clear();
+                   // for (int i = 0; i < dataGridView1.SelectedCells.Count; i++)
+                   // { list.Add(dataGridView1.SelectedRows[0].Cells[i].Value.ToString()); }
+                   // foreach (string a in list)
+                   // {
+                   //     foreach (string b in favList)
+                   //     {
+                   //         if (a == b) { tempName = b; }
+                   //     }
 
-                    }
+                   // }
 
                     string row_1 = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
 
                     del.CommandText = "DELETE FROM " + selectedTable + " WHERE " + attributes[0] + "= '" + row_1 + "'";
 
-                    com.CommandText = "DELETE FROM favorites WHERE favorite = '" + tempName + "'";
+                   // com.CommandText = "DELETE FROM favorites WHERE favorite = '" + tempName + "'";
                     del.Connection = connect;
-                    com.Connection = conn;
+                   // com.Connection = conn;
                     del.ExecuteNonQuery();
-                    com.ExecuteNonQuery();
+                  //  com.ExecuteNonQuery();
 
                     dataGridView1.Rows.RemoveAt(row.Index);
-                    favList.Remove(tempName);
+                   // favList.Remove(tempName);
                 }
                 else
                 {
@@ -347,7 +347,7 @@ namespace LibYourself
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+       /* private void button2_Click(object sender, EventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection("Data Source=Favorites.db;");
             conn.Open();
@@ -375,6 +375,6 @@ namespace LibYourself
                 }
 
             }
-        }
+        }*/
     }
 }
