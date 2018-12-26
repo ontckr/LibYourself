@@ -9,12 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace LibYourself
 {
     public partial class Form1 : Form
     {
-       public String selectedTable;
+        ArrayList list = new ArrayList();
+        ArrayList favList = new ArrayList();
+        public String selectedTable;
 
         public Form1()
         {
@@ -103,6 +106,19 @@ namespace LibYourself
                 dataAdapter.Fill(dataSet);
 
                 dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+
+
+                dataGridView1.BorderStyle = BorderStyle.None;
+                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+                dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+                dataGridView1.BackgroundColor = Color.White;
+
+                dataGridView1.EnableHeadersVisualStyles = false;
+                dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             }
         }
 
@@ -141,24 +157,57 @@ namespace LibYourself
 
         private void addFavorite_Click(object sender, EventArgs e)
         {
+           
 
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
+        
+        
         private void searchButton_Click(object sender, EventArgs e)
         {
 
         }
         private void searchKey_TextChanged(object sender, EventArgs e)
         {
+            panel5.Hide();
+            panel4.Show();
+            dataGridView1.Controls.Clear();
+            SQLiteConnection connect = new SQLiteConnection("Data Source=DataTable.db;");
+            connect.Open();
+            List<String> attributes = new List<string>();
+            using (SQLiteCommand fmd = connect.CreateCommand())
+            {
+                fmd.CommandText = "PRAGMA table_info(" + selectedTable + ")";
+                fmd.CommandType = CommandType.Text;
+                SQLiteDataReader r = fmd.ExecuteReader();
+                while (r.Read())
+                {
+                    attributes.Add(r["name"].ToString());
+                }
+            }
 
+
+            string search = searchKey.Text;
+
+            DataSet dataSet = new DataSet();
+            foreach (string sk in attributes)
+            {
+
+                SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter("SELECT * FROM " + selectedTable + " WHERE " + sk + "= '" + search + "'", connect);
+
+                dataAdapter.Fill(dataSet);
+
+
+
+            }
+            dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
         }
+
         private void showFavorite_Click(object sender, EventArgs e)
         {
-
+            
         }
+
         private void deleteItem_Click(object sender, EventArgs e)
         {
 
